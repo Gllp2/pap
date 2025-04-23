@@ -1,0 +1,15 @@
+bodyend {
+    margin: 0;
+    padding: 0;
+    min-height: 38vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#About {
+    background-color: black;
+    color: #FFFFFF;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 20px;
+}

@@ -1,0 +1,27 @@
+
+.column.middle {
+    text-align: center;
+}
+
+.accordion {
+    background-color: #69e032;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    transition: 0.4s;
+}
+
+.accordion:hover {
+    background-color: #58a32c;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}

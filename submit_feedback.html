@@ -1,0 +1,37 @@
+<?php
+// Database connection details
+$dsn = "SAGE";
+$user = "SA";
+$password = "sage2008+";
+
+// Establishing the connection
+$conn = odbc_connect($dsn, $user, $password);
+
+if (!$conn) {
+    die("Connection failed: " . odbc_errormsg());
+}
+
+// Getting the form data
+$utilizador = $_POST['utilizador'];
+$datafeed = date('Y-m-d H:i:s'); // Current date and time
+$comentario = $_POST['comentario'];
+
+// SQL query to insert data into the database
+$sql = "INSERT INTO [PAP].[dbo].[FeedBack] ([Utilizador], [DataFeed], [Comentario]) VALUES (?, ?, ?)";
+$stmt = odbc_prepare($conn, $sql);
+
+if (!$stmt) {
+    die("Error in preparing statement: " . odbc_errormsg($conn));
+}
+
+$result = odbc_execute($stmt, [$utilizador, $datafeed, $comentario]);
+
+if ($result) {
+    echo "Feedback submitted successfully!";
+} else {
+    echo "Error in submitting feedback: " . odbc_errormsg($conn);
+}
+
+// Closing the connection
+odbc_close($conn);
+?>

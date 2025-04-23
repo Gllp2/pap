@@ -1,0 +1,95 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f8;
+    color: #333;
+}
+
+/* Navbar styles */
+.navbar {
+    list-style-type: none;
+    padding: 0;
+    background-color: #333;
+    overflow: hidden;
+    margin: 0;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: #111;
+}
+
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1, .header h3, .header h6 {
+    margin: 10px 0;
+}
+
+/* Row and column styles */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.column {
+    padding: 10px;
+}
+
+.column.side {
+    flex: 1;
+    min-width: 170px;
+    max-width: 170px;
+}
+
+.column.middle {
+    width: 60%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center align the column */
+    padding: 10px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Image hover effect */
+.column img {
+    transition: transform 0.2s;
+}
+
+.column img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive layout */
+@media screen and (max-width: 600px) {
+    .navbar li {
+        float: none;
+        width: 100%;
+    }
+
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
